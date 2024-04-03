@@ -1,0 +1,17 @@
+
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+    opacity: 0;
+  }
+  
+  .tabbrowser-tab[label="New Tab"] .tab-label-container::before {
+    content: "";
+    background-image: url('resources/firefox-svgrepo-com.svg');
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 20x;
+    left: 10px;
+    pointer-events: none;
+    opacity: 1;
+  }

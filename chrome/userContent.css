@@ -1,0 +1,108 @@
+  @-moz-document url("about:newtab"), url("about:home") {
+  :root{
+    --focus-outline-color: #88c0d0 !important;
+    --nord-dark-grey: #3b4252;
+    --nord-black: #2e3440;
+    --newtab-background-color: #fffff !important;
+    --newtab-wordmark-color: #d08770 !important;
+    background-image: url("resources/nord_landscape.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .body{
+
+
+  }
+  body::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: blur 0.4s ease-out, fadeIn 0.4s ease-out;
+    backdrop-filter: blur(3px);
+    z-index: -1;
+  }
+  .logo{
+    background: url("resources/firefox-svgrepo-com.svg") no-repeat center center !important;
+    width:100% !important;
+    opacity:0;
+    animation: initialRotation 0.4s ease-out, fadeIn 0.4s ease-out; 
+    animation-fill-mode:forwards;
+    animation-delay:0.2s;
+  }
+  .wordmark{
+    width: 500px !important;
+    height: 120px !important;
+    background: url("resources/SnowFoxDark.svg") no-repeat center center !important;
+    animation: slideUp 0.4s ease-out, fadeIn 0.4s ease-out;
+    opacity:0;
+    animation-fill-mode:forwards;
+    animation-delay:0.1s;
+
+  }
+  .logo-and-wordmark{
+    flex-wrap:wrap;
+  }
+
+  .search-handoff-button{
+    --newtab-search-icon: url("resources/search.svg") !important; 
+    background-color: #ffffff1f !important;
+    backdrop-filter: blur(10px);
+    animation: slideRight 0.4s ease-in-out, fadeIn 0.4s ease-in-out;
+    opacity:0;
+    animation-fill-mode:forwards;
+  }
+  .fake-textbox{
+    color:var(--nord-black) !important;
+  }
+}
+
+@keyframes initialRotation {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight{
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blur {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    backdrop-filter: blur(3px);
+  }
+}
+
